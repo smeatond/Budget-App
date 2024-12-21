@@ -1,11 +1,26 @@
 using System.Text.Json.Serialization;
+using DS.BA.Common.DBContext;
+using Microsoft.EntityFrameworkCore;
+using DotNetEnv;
 
 var builder = WebApplication.CreateSlimBuilder(args);
+
+DotNetEnv.Env.Load();
+
+var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING") ??
+                       builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseNpgsql(connectionString);
+});
 
 builder.Services.ConfigureHttpJsonOptions(options =>
 {
     options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppJsonSerializerContext.Default);
 });
+
+
 
 var app = builder.Build();
 

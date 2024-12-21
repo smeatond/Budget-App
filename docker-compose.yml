@@ -25,6 +25,10 @@ services:
       - "5001:5001"
     environment:
       - ASPNETCORE_URLS=http://localhost:5001
+      - PPGUSER=${PGUSER}
+      - PGPASSWORD=${PGPASSWORD}
+      - PGDATABASE=${PGDATABASE}
+      - DATABASE_CONNECTION_STRING=User ID=${PGUSER};Password=${PGPASSWORD};Server=localhost;Port=5432;Database=${PGDATABASE};Pooling=true;
     expose:
       - 5001
     depends_on:
