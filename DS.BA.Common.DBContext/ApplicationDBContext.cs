@@ -8,9 +8,4 @@ public class ApplicationDbContext(
     IApplicationScopedContext scopedContext)
     : Microsoft.EntityFrameworkCore.DbContext(options), IDbContext
 {
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.Use(
-            @"Server=(localdb)\mssqllocaldb;Database=Test;ConnectRetryCount=0");
-    }
 }
