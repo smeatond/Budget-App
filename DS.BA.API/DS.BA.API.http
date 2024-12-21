@@ -1,0 +1,11 @@
+@DS.BA.API_HostAddress = http://localhost:5232
+
+GET {{DS.BA.API_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{DS.BA.API_HostAddress}}/todos/1
+Accept: application/json
+
+###
