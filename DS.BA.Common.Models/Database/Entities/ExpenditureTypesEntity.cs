@@ -5,27 +5,20 @@ using DS.BA.Common.Models.Database.Abstractions;
 namespace DS.BA.Common.Models.Database.Entities;
 
 /// <summary>
-///     Represents the income entity
+///     A way to categories expenditures
 /// </summary>
-[Table("Incomes")]
-public class IncomeEntity : BaseEntity
+[Table("Expenditure Types")]
+public class ExpenditureTypesEntity : BaseEntity
 {
     /// <summary>
-    ///     Name of the income
+    ///     The Name of the type
     /// </summary>
-    public string? Name { get; set; }
+    public string Name { get; set; }
 
     /// <summary>
-    ///     The amount of incomes
+    ///     Related expenditures
     /// </summary>
-    [Required]
-    [Column(TypeName = "decimal(18,2)")]
-    public decimal Amount { get; set; }
-
-    /// <summary>
-    ///     Related budgets
-    /// </summary>
-    public ICollection<BudgetEntity> Budgets { get; set; } = [];
+    public ICollection<ExpenditureEntity> Expenditures { get; set; } = [];
 
     /// <summary>
     ///     Connected family
@@ -38,5 +31,4 @@ public class IncomeEntity : BaseEntity
     /// </summary>
     [ForeignKey("FamilyId")]
     public FamilyEntity Family {get;set;}
-
 }
