@@ -1,7 +1,6 @@
 using System.Text.Json.Serialization;
-using DS.BA.Common.DBContext;
 using Microsoft.EntityFrameworkCore;
-using DotNetEnv;
+using DS.BA.Common.DbContext;
 
 var builder = WebApplication.CreateSlimBuilder(args);
 

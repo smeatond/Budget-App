@@ -11,9 +11,12 @@ RUN apt-get update && apt-get install -y clang gcc libc6-dev
 
 WORKDIR /src
 COPY ["DS.BA.API/DS.BA.API.csproj", "DS.BA.API/"]
+#copy for migration
+COPY ["DS.BA.Common.DbContext/DS.BA.Common.DbContext.csproj", "DS.BA.Common.DbContext/"]
 RUN dotnet restore "DS.BA.API/DS.BA.API.csproj"
 COPY . .
 WORKDIR "/src/DS.BA.API"
+RUN ls "../"
 RUN dotnet build "DS.BA.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish

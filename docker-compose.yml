@@ -41,5 +41,18 @@ services:
       - "8080:80"
     depends_on:
       - api
+  migrate:
+    build:
+      context: .
+      dockerfile: DS.BA.API/Dockerfile
+    entrypoint: >
+      sh -c "
+      dotnet ef database update
+      --project DS.BA.Common.DbContext
+      --startup-project DS.BA.API"
+    depends_on:
+      - database
+    environment:
+      - DOTNET_ENVIRONMENT=Development
 volumes:
   ba-volume:

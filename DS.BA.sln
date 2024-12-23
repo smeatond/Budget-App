@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DS.BA.Web", "DS.BA.Web\DS.BA.Web.csproj", "{C9233BAC-C5D5-480B-AF57-340FFECFEB11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DS.BA.Common.DBContext", "DS.BA.Common.DBContext\DS.BA.Common.DBContext.csproj", "{6137428F-5993-4777-AED2-EAC8A71887F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DS.BA.Common.DbContext", "DS.BA.Common.DBContext\DS.BA.Common.DbContext.csproj", "{6137428F-5993-4777-AED2-EAC8A71887F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DS.BA.Common.Library", "DS.BA.Common.Library\DS.BA.Common.Library.csproj", "{BAFCDAA7-8E43-4538-A6F7-368416D31740}"
 EndProject

@@ -1,12 +1,10 @@
-using DS.BA.Common.DbContext;
 using DS.BA.Common.Models.Database.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DS.BA.Common.DBContext;
+namespace DS.BA.Common.DbContext;
 
 public class ApplicationDbContext(
-    DbContextOptions<ApplicationDbContext> options,
-    IApplicationScopedContext scopedContext)
+    DbContextOptions<ApplicationDbContext> options)
     : Microsoft.EntityFrameworkCore.DbContext(options), IDbContext
 {
     public DbSet<IncomeEntity> Incomes { get; set; }
